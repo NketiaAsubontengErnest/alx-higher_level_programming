@@ -1,23 +1,20 @@
 #!/usr/bin/python3
-''' A Module that creates a Square object '''
+"""Define an object name Square.
+"""
 
-class Square;
-''' Creating an Object template '''
 
-    def __init__(self, size = 0):
-        '''
-            The init method initializes the class instance
-
-        @self:
-            A parameter used to refer to the class instance
-
-        @size:
-            The size of the square, must be a +ve integer
-        '''
-        if type(size) is int:
-            if size < 0:
-                raise ValueError('Size must be >= 0')
-            else:
-                self.__size = size
+class Square:
+    """ Object Square [class]
+    """
+    def __init__(self, size=0):
+        """ Initialize method.
+        Args:
+            self (class): This class
+            size (int): Size of the square
+        """
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
         else:
-            raise TypeError('Size must be an integer')
+            self.__size = int(size)
